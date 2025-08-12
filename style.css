@@ -1,0 +1,121 @@
+/* إعدادات عامة */
+* { box-sizing: border-box; }
+:root {
+  --brown: #8b5a2b;
+  --brown-dark: #704621;
+  --bg: #f7f5f2;
+  --card: #ffffff;
+  --text: #1f1f1f;
+  --muted: #6b7280;
+}
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Tajawal', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* حاوية قياسية */
+.container { width: min(1100px, 92%); margin: 0 auto; }
+
+/* شريط علوي */
+.topbar {
+  background: var(--brown);
+  color: #fff;
+  position: sticky; top: 0; z-index: 50;
+}
+.topbar .container { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
+.brand { font-size: 1.2rem; font-weight: 700; }
+.brand .pill { background:#fff; color: var(--brown); padding: 2px 8px; border-radius: 999px; margin-inline-start: 6px; }
+.nav a { color:#fff; text-decoration:none; margin: 0 8px; font-weight: 500; }
+.nav a:hover { text-decoration: underline; }
+
+/* بطل الصفحة */
+.hero { padding: 28px 0 10px; }
+.hero-grid {
+  display: grid; gap: 24px;
+  grid-template-columns: 1.15fr 1fr;
+}
+.hero-text h1 { margin: 0 0 10px; line-height: 1.4; }
+.focus { color: var(--brown); font-weight: 700; }
+.hero-text p { color: var(--muted); margin: 0 0 18px; }
+.cta {
+  display:inline-block; background: var(--brown); color:#fff; text-decoration:none;
+  padding: 10px 16px; border-radius: 10px; font-weight: 700;
+}
+.cta:hover { background: var(--brown-dark); }
+.hero-images { display:grid; gap: 10px; grid-template-columns: 1fr 1fr; align-content:start; }
+.hero-images img { width: 100%; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+.hero-images img:nth-child(1) { grid-column: 1 / -1; }
+
+/* بطاقات عامة */
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  margin: 18px auto;
+}
+
+/* مهارات */
+#skills h2, #about h2, #how h2, #best h2, #faq h2 { margin-top: 10px; }
+.skills-grid {
+  display:grid; gap:14px; margin-top:12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.skill {
+  background: var(--card); border:1px solid #eee; border-radius:10px; padding:14px;
+}
+.skill .icon { font-size: 26px; }
+.skill h3 { margin:6px 0 6px; }
+
+/* كيف يعمل */
+.steps { margin: 0; padding-inline-start: 18px; line-height: 1.9; }
+
+/* أفضل الممارسات */
+.best-grid {
+  display:grid; gap:10px; margin: 10px 0 0;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.best-item {
+  background: var(--card); border:1px dashed #ddd; border-radius:10px; padding:12px;
+}
+
+/* الأسئلة الشائعة */
+#faq details { background:#fff; border:1px solid #eee; border-radius:8px; padding:10px; margin:8px 0; }
+#faq summary { cursor: pointer; font-weight:700; }
+
+/* تذييل */
+.footer { margin: 20px 0 60px; color:#666; }
+
+/* أيقونة الشات + نافذة منبثقة */
+#ai-icon {
+  position: fixed; bottom: 20px; right: 20px;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--brown); color:#fff; display:flex; align-items:center; justify-content:center;
+  font-size: 28px; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,.18);
+  z-index: 999;
+}
+#ai-icon:hover { background: var(--brown-dark); }
+
+#ai-popup {
+  position: fixed; bottom: 90px; right: 20px; width: 320px;
+  background: #fffaf4; border: 2px solid var(--brown); border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+  padding: 10px; z-index: 1000; text-align: right; font-family: 'Tajawal', sans-serif;
+  max-height: 60vh; overflow-y: auto;
+}
+#ai-popup textarea { width:100%; border-radius:6px; border:1px solid #ccc; padding:8px; resize:none; }
+#ai-popup button {
+  margin-top: 6px; width:100%; border:none; padding:9px; border-radius:6px; background: var(--brown); color:#fff; font-weight:700; cursor:pointer;
+}
+#ai-popup button:hover { background: var(--brown-dark); }
+#ai-response {
+  margin-top: 8px; font-size: 14px; white-space: pre-line; background:#f9f4ef; padding:6px; border-radius:6px; border:1px solid #eee;
+}
+
+/* استجابة */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+}
